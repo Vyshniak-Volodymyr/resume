@@ -1,119 +1,108 @@
-/* Global styles */
+/* Основні стилі (Mobile First) */
 body {
     background: #f6f6fa;
     padding: 20px;
     font-family: "Montserrat", sans-serif;
-    margin: 0;
 }
 
-/* Flexbox structure for layout */
 .wrapper {
+    background: #ffffff;
     display: flex;
     flex-direction: column;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    background: #ffffff;
 }
 
+/* Sidebar */
+.sidebar {
+    background: #e0ebfe;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.sidebar img {
+    width: 100%;
+    max-width: 370px;
+    display: block;
+    margin: 0 auto;
+}
+
+.sidebar-content {
+    padding-top: 20px;
+}
+
+.сontacts-title,
+.skills-title {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.сontacts-item,
+.skills-list-item {
+    font-size: 14px;
+    line-height: 24px;
+}
+
+/* Основний контент */
 .main-content {
     padding: 20px;
 }
 
-.sidebar {
-    background: #e0ebfe;
-    padding: 20px;
-}
-
-/* Responsive Typography */
-.my-profession, .my-name, .my-descr {
-    margin: 10px 0;
-}
-
-.my-profession {
-    font-size: 14px;
-    font-weight: 700;
-}
-
 .my-name {
-    font-size: 24px;
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.my-projects-title,
+.work-experience-title {
+    font-size: 20px;
     font-weight: 700;
 }
 
-.my-descr {
+.work-experience-company {
+    font-size: 16px;
+}
+
+.work-experience-duties-item {
     font-size: 14px;
-    color: #595959;
+    line-height: 24px;
 }
 
-.my-projects-title, .work-experience-title, .skills-title {
-    font-size: 22px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-/* Mobile first: small screens */
-.my-projects-list, .work-experience-duties-list, .skills-list {
-    padding-left: 20px;
-    margin: 0;
-}
-
-.my-projects-item, .work-experience-duties-item, .skills-list-item {
-    font-size: 14px;
-    margin-bottom: 8px;
-}
-
-/* Sidebar styles */
-.sidebar img {
-    width: 100%;
-    max-width: 370px;
-    height: auto;
-}
-
-.сontacts-title, .skills-title {
-    font-size: 18px;
-}
-
-/* Large screen styles (Tablet and Desktop) */
-@media (min-width: 768px) {
+/* Адаптивні стилі */
+@media screen and (min-width: 768px) and (max-width: 1157px) {
     .wrapper {
         flex-direction: row;
     }
 
+    .sidebar {
+        width: 250px;
+    }
+
     .main-content {
-        padding-left: 40px;
-        padding-right: 40px;
+        padding: 40px;
+    }
+
+    .my-name {
+        font-size: 38px;
+    }
+}
+
+@media screen and (min-width: 1158px) {
+    .wrapper {
+        flex-direction: row-reverse;
     }
 
     .sidebar {
         width: 370px;
     }
 
+    .main-content {
+        padding: 80px;
+    }
+
     .my-name {
         font-size: 45px;
-    }
-
-    .my-profession {
-        font-size: 18px;
-    }
-
-    .my-descr {
-        font-size: 16px;
-    }
-
-    .my-projects-item, .work-experience-duties-item, .skills-list-item {
-        font-size: 16px;
-    }
-
-    .my-projects-list, .work-experience-duties-list {
-        padding-left: 30px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .wrapper {
-        width: 1200px;
-    }
-
-    .sidebar img {
-        width: 370px;
     }
 }
